@@ -22,6 +22,313 @@
             android:scaleType="centerCrop"
             android:src="@drawable/logo" />
 
+        <ImageView
+            android:id="@+id/airdropLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/airdrop_coming" />
+
+        <RelativeLayout
+            android:id="@+id/dailyCodingChallengeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/home_daily_coding_challenge_background">
+
+            <TextView
+                android:id="@+id/terminalName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="@font/source_code_pro_bold"
+                android:padding="@dimen/_10sdp"
+                android:text="dailycoding@challenge"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/dailyCodingChallengeTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/terminalName"
+                android:layout_marginTop="-10dp"
+                android:background="@drawable/home_daily_coding_challenge_background"
+                android:fontFamily="@font/lato_semibold"
+                android:padding="@dimen/_12sdp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-30dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="-30dp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/explore_showcase_list_background">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_28sdp"
+                android:layout_marginBottom="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/showcaseLabel"
+                    android:layout_width="@dimen/_138sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:fontFamily="@font/lato_semibold"
+                    android:text="Top Showcase Project"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:id="@+id/showcaseDescription"
+                    android:layout_width="@dimen/_138sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showcaseLabel"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="Top product in among will be featured here! Get as many upvotes as you can!"
+                    android:textColor="@color/secondaryButtonTextColor"
+                    android:textSize="@dimen/_12ssp" />
+
+                <Button
+                    android:id="@+id/listYourProjectsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_below="@id/showcaseDescription"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_toEndOf="@id/showcaseLayout"
+                    android:background="@drawable/profile_button"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="List Your Project"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:backgroundTint="@null" />
+
+                <RelativeLayout
+                    android:id="@+id/showcaseLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:layout_toStartOf="@id/showcaseLabel"
+                    android:background="@drawable/guideline_background">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/projectCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_112sdp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_8sdp"
+                        app:cardBackgroundColor="@color/primaryColor"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:id="@+id/projectImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/projectTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/projectCard"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/lato_semibold"
+                        android:text="@string/product_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/projectTagline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/projectTitle"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lato_medium"
+                        android:maxLines="2"
+                        android:text="@string/project_tagline"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="-30dp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/explore_guidelines_list_background">
+
+            <LinearLayout
+                android:id="@+id/featured_guideline_background"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_230sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/global_edittext"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_34sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@font/lato_semibold"
+                    android:text="All Featured Guidelines"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@font/lato_medium"
+                    android:text="All the books are featured and have top demand in our libraries"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/guidelineRv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_230sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_toEndOf="@id/featured_guideline_background"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_featured_guidelines" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_188sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:background="@drawable/explore_hackathon_list_background"
+            android:elevation="@dimen/_2sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hackathon_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/hackathon_src"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.4"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/home_hackathon_src" />
+
+                    <TextView
+                        android:id="@+id/hackathonLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:fontFamily="@font/arcade_gamer"
+                        android:text="Join the hackathons"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_20ssp" />
+
+                    <TextView
+                        android:id="@+id/hackathonDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hackathonLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:fontFamily="@font/lato_medium"
+                        android:text="Encourage creativity, problem-solving, and hands-on learning, making them a popular space for networking, skill-building, and launching new tech ideas."
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryButtonTextColor"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <Button
+                        android:id="@+id/hackathonButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_below="@id/hackathonDescription"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_18sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:background="@drawable/primary_button"
+                        android:backgroundTint="#AAB3FD"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Explore hackathons now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:backgroundTint="@null" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
     </LinearLayout>
 
 </ScrollView>

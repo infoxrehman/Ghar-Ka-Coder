@@ -1,29 +1,51 @@
 [versions]
 agp = "8.5.2"
 androidGifDrawable = "1.2.19"
+glide = "4.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
+kolodaAndroid = "v0.0.2-alpha"
 lottie = "6.5.0"
 material = "1.12.0"
 constraintlayout = "2.1.4"
 activity = "1.9.2"
 sdpAndroid = "1.1.1"
 sspAndroid = "1.1.1"
+googleGmsGoogleServices = "4.4.2"
+firebaseAnalytics = "22.1.0"
+firebaseAuth = "23.0.0"
+firebaseFirestore = "25.1.0"
+firebaseStorage = "21.0.0"
+firebaseCrashlytics = "19.1.0"
+googleFirebaseCrashlytics = "3.0.2"
+firebasePerf = "21.0.1"
+googleFirebaseFirebasePerf = "1.4.2"
 
 [libraries]
 android-gif-drawable = { module = "pl.droidsonroids.gif:android-gif-drawable", version.ref = "androidGifDrawable" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+koloda-android = { module = "com.github.Yalantis:Koloda-Android", version.ref = "kolodaAndroid" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
 ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
+firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleFirebaseCrashlytics" }
+google-firebase-firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "googleFirebaseFirebasePerf" }

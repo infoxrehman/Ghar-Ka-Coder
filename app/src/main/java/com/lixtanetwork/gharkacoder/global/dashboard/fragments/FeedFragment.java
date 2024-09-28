@@ -13,12 +13,18 @@ import android.view.ViewGroup;
 import android.view.Window;
 
 import com.lixtanetwork.gharkacoder.R;
+import com.lixtanetwork.gharkacoder.SwipeAdapter;
 import com.lixtanetwork.gharkacoder.databinding.FragmentFeedBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FeedFragment extends Fragment {
 
     private FragmentFeedBinding binding;
     private Context mContext;
+    private SwipeAdapter swipeAdapter;
+    private List<Integer> list;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -38,5 +44,11 @@ public class FeedFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        list = new ArrayList<>();
+
+        swipeAdapter = new SwipeAdapter(mContext, list);
+        binding.koloda.setAdapter(swipeAdapter);
+
     }
+
 }

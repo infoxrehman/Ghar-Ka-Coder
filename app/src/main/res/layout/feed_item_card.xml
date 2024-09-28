@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_8sdp"
+    app:cardElevation="@dimen/_2sdp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileIv"
+            android:layout_width="@dimen/_52sdp"
+            android:layout_height="@dimen/_52sdp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_icon"
+            app:shapeAppearance="@style/styleCircleImage" />
+
+        <TextView
+            android:id="@+id/fullNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_toEndOf="@id/profileIv"
+            android:fontFamily="@font/lato_semibold"
+            android:text="Abdul Rehman Khan"
+            android:textColor="@color/disabledText"
+            android:textSize="@dimen/_14ssp" />
+
+        <ImageView
+            android:id="@+id/verifiedIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/fullNameTv"
+            android:layout_alignBottom="@+id/fullNameTv"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@id/fullNameTv"
+            android:scaleType="center"
+            android:src="@drawable/profile_verified_icon"
+            app:tint="@color/primaryColor" />
+
+        <TextView
+            android:id="@+id/userNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/verifiedIv"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_toEndOf="@id/profileIv"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/Username"
+            android:textColor="@color/disabledText"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/dateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userNameTv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:fontFamily="@font/lato_semibold"
+            android:text="25 sep, 3:30 PM"
+            android:textColor="@color/disabledText"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/postTextTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateTv"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:fontFamily="@font/lato_regular"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Proin suscipit, urna et tristique aliquam, nisi libero tristique velit, at fermentum nunc erat ac nunc. Curabitur pharetra, tortor sit amet feugiat ultricies, arcu purus vulputate urna, non aliquam neque leo a libero."
+            android:textColor="@color/disabledText"
+            android:textSize="@dimen/_14ssp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_below="@id/postTextTv"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            app:cardCornerRadius="@dimen/_8sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_hackathon" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

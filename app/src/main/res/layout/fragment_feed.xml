@@ -8,4 +8,35 @@
     android:orientation="vertical"
     tools:context=".global.dashboard.fragments.FeedFragment">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/community_explore_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_68sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:cardBackgroundColor="@color/primaryColor"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/lato_bold"
+            android:text="Add your feed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18ssp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.yalantis.library.Koloda
+        android:id="@+id/koloda"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        app:koloda_card_layout="@layout/feed_item_card" />
+
 </LinearLayout>

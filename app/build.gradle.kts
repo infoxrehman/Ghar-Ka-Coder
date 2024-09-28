@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.google.firebase.crashlytics)
+    alias(libs.plugins.google.firebase.firebase.perf)
 }
 
 android {
@@ -43,11 +46,21 @@ dependencies {
 
     implementation(libs.lottie)
 
+    implementation(libs.glide)
+
+    implementation(libs.koloda.android)
+
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)
 
     implementation(libs.constraintlayout)
     implementation(libs.activity)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.perf)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

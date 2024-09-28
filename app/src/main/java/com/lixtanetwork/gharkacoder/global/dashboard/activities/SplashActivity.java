@@ -8,20 +8,26 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Window;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import com.lixtanetwork.gharkacoder.R;
 import com.lixtanetwork.gharkacoder.global.loginandregister.activities.LoginActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class SplashActivity extends AppCompatActivity {
 
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
+    private FirebaseFirestore firestore;
     private ConnectivityManager connectivityManager;
 
     @Override
@@ -31,6 +37,10 @@ public class SplashActivity extends AppCompatActivity {
         window.setStatusBarColor(this.getResources().getColor(R.color.background));
         setContentView(R.layout.activity_splash);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        firestore = FirebaseFirestore.getInstance();
+
         connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (!isConnected()) {
@@ -39,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    checkUser();
                 }
             }, 1000);
         }
@@ -63,6 +73,33 @@ public class SplashActivity extends AppCompatActivity {
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void checkUser() {
+        if (firebaseUser == null) {
+            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            finish();
+        } else {
+            firestore.collection("Users").document(firebaseUser.getUid())
+                    .get()
+                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()) {
+                                startActivity(new Intent(SplashActivity.this, DashboardActivity.class));
+                                finish();
+                            } else {
+                                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                                finish();
+                            }
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                        }
+                    });
+        }
     }
 
 }

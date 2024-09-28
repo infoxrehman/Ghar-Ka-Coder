@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".global.dashboard.activities.DashboardActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigationView" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_navigation_background"
+        android:layout_margin="@dimen/_12sdp"
+        app:itemIconSize="@dimen/_16sdp"
+        app:itemIconTint="@drawable/selector"
+        android:padding="@dimen/_4sdp"
+        app:itemRippleColor="@null"
+        app:itemTextAppearanceActive="@style/CustomBottomNavigationActiveLabel"
+        app:itemTextAppearanceInactive="@style/CustomBottomNavigationInactiveLabel"
+        app:itemTextColor="@drawable/selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_navigation" />
+
+</RelativeLayout>

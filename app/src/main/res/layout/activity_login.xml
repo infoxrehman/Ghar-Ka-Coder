@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".global.loginandregister.activities.LoginActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_140sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_28sdp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/welcome" />
+
+    <TextView
+        android:id="@+id/welcomeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animation_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Welcome back!"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_24ssp" />
+
+    <TextView
+        android:id="@+id/welcomeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:fontFamily="@font/lato_semibold"
+        android:text="Sign in to continue!"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp" />
+
+    <EditText
+        android:id="@+id/emailEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeDescription"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_34sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@drawable/global_edittext"
+        android:fontFamily="@font/lato_medium"
+        android:hint="@string/enterEmail"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_12sdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:endIconMode="clear_text" />
+
+    <EditText
+        android:id="@+id/passwordEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailEt"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@drawable/global_edittext"
+        android:fontFamily="@font/lato_medium"
+        android:hint="@string/enterPassword"
+        android:inputType="textPassword"
+        android:padding="@dimen/_12sdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/forgetTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEt"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:fontFamily="@font/lato_semibold"
+        android:gravity="center"
+        android:text="@string/forgetPassword"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgetTv"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:layout_marginTop="@dimen/_28sdp"
+        android:layout_marginEnd="@dimen/_28sdp"
+        android:background="@drawable/primary_button"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="center"
+        android:padding="@dimen/_4sdp"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:backgroundTint="@null" />
+
+    <TextView
+        android:id="@+id/registerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/registerButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:text="Don't have an account?"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_32sdp"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="center"
+        android:text="Regsiter Now"
+        android:textAllCaps="false"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_14ssp" />
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Ghar Ka Coder</string>
+    <string name="powered_with">Powered with</string>
+    <string name="companyLabel">A Lixta Network Product ©</string>
+    <string name="version_code">Version code 1.0</string>
+    <string name="default_web_client_id" translatable="false">123.apps.googleusercontent.com</string>
+    <string name="forgetPassword">Forget Password?</string>
+    <string name="gBToSignUp">Don\'t need ? Get back</string>
+
+    <!-- Buttons Texts-->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="reset_now">Reset now</string>
+    <string name="verify_now">Verify now</string>
+    <string name="update">Update</string>
+
+    <!-- Edit Texts-->
+    <string name="enterName">Enter your name</string>
+    <string name="enterUserName">Enter your username</string>
+    <string name="enterEmail">Enter your email address</string>
+    <string name="enterPassword">Enter your password</string>
+    <string name="cPassword">Confirm your password</string>
+
+    <string name="guidelines">Guidelines</string>
+    <string name="community">Community</string>
+    <string name="hackathon">Hackathon</string>
+    <string name="internship">Internship</string>
+    <string name="showcase">Showcase</string>
+
+    <!-- Community -->
+    <string name="community_meetups">Community meetups</string>
+    <string name="community_chats">Community chats</string>
+    <string name="community_projects">Community projects</string>
+
+    <string name="category_title">Category Title</string>
+
+    <!-- Profile -->
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="Username">\@infoxrehman</string>
+    <string name="email_address">Email address</string>
+    <string name="bio">Bio</string>
+    <string name="wallet_id">ⓘ Connect your wallet as tokens are available!</string>
+    <string name="codr_token_value">0.00</string>
+    <string name="verified">Verified</string>
+
+    <string name="no_highlight">Ahh! No highlight yet kernel</string>
+    <string name="highlight_title">Highlight title</string>
+
+    <string name="edit_profile">Edit profile</string>">
+    <string name="connect_wallet">Connect wallet</string>
+    <string name="get_verified">Get verified</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="logout">Logout</string>
+
+    <string name="askGeminiAI">Tap Gemini AI to start chatting…</string>
+    <string name="enterBio">Enter your bio\n</string>
+
+    <string name="hackathon_title">Hackathon title</string>
+    <string name="hackathon_tagline">Project tagline</string>
+    <string name="hackathon_description">Hackathon description</string>
+    <string name="hackathon_url">Hackathon url</string>
+    <string name="hackathon_contributor">Hackathon contributor</string>
+    <string name="hackathon_fee">Hackathon fee</string>
+    <string name="hackathon_address">Hackathon address</string>
+
+    <string name="product_title">Project title</string>
+    <string name="project_tagline">Project tagline</string>
+    <string name="project_description">Project description\n</string>
+    <string name="project_url">Project url (optional)</string>
+
+    <string name="creatorName">Creator name</string>
+    <string name="creatorBio">Creator bio</string>
+    <string name="daily_coding_challenge">Daily Coding Challenge</string>
+
+</resources>

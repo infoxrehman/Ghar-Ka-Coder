@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:scrollbars="none"
+    tools:context=".global.dashboard.fragments.ExploreFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-200dp"
+            android:rotation="120"
+            android:src="@drawable/sticker_stick" />
+
+        <RelativeLayout
+            android:id="@+id/guidelinesTab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_78sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/explore_guidelines_list_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:fontFamily="@font/arcade_gamer"
+                android:text="@string/guidelines"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginBottom="-20dp"
+                android:src="@drawable/explore_guidelines_list_icon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/communityTab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_78sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/explore_community_list_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:fontFamily="@font/arcade_gamer"
+                android:text="@string/community"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginBottom="-20dp"
+                android:src="@drawable/explore_community_list_icon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/showcaseTab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_78sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/explore_showcase_list_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:fontFamily="@font/arcade_gamer"
+                android:text="@string/showcase"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="-20dp"
+                android:src="@drawable/explore_showcase_list_icon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hackathonTab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_78sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/explore_hackathon_list_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:fontFamily="@font/arcade_gamer"
+                android:text="@string/hackathon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginBottom="-20dp"
+                android:src="@drawable/explore_hackathon_list_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

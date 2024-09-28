@@ -15,15 +15,23 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.lixtanetwork.gharkacoder.R;
 import com.lixtanetwork.gharkacoder.databinding.ActivityEditProfileBinding;
 
@@ -35,7 +43,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private Uri imageUri = null;
     private ProgressDialog progressDialog;
-    private String myAccountType = "", name = "", dob = "", email = "", bio = "", userName = "", representedAs = "";
+    private String myAccountType = "", name = "", dob = "", email = "", bio = "", userName = "", representBy = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,19 +119,25 @@ public class EditProfileActivity extends AppCompatActivity {
             hashMap.put("profileImage", imageUrl);
         }
 
-        if (myAccountType.equalsIgnoreCase("Email") || myAccountType.equalsIgnoreCase("Google")) {
-            hashMap.put("email", email);
-        }
+        hashMap.put("email", email);
+        hashMap.put("representBy", representBy);
 
         DocumentReference userRef = FirebaseFirestore.getInstance().collection("Users").document(firebaseAuth.getUid());
         userRef.update(hashMap)
-                .addOnSuccessListener(unused -> {
-                    progressDialog.dismiss();
-                    Toast.makeText(EditProfileActivity.this, "Profile updated", Toast.LENGTH_SHORT).show();
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        progressDialog.dismiss();
+                        Toast.makeText(EditProfileActivity.this, "Profile updated", Toast.LENGTH_SHORT).show();
+                    }
                 })
-                .addOnFailureListener(e -> {
-                    progressDialog.dismiss();
-                    Toast.makeText(EditProfileActivity.this, "Failed to update db due to " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                        progressDialog.dismiss();
+                        Toast.makeText(EditProfileActivity.this, "Failed to update db due to " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 });
     }
 
@@ -135,15 +149,21 @@ public class EditProfileActivity extends AppCompatActivity {
 
         StorageReference reference = FirebaseStorage.getInstance().getReference(filePathAndName);
         reference.putFile(imageUri)
-                .addOnSuccessListener(taskSnapshot -> {
-                    Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                    while (!uriTask.isSuccessful()) ;
-                    String uploadedImageUrl = uriTask.getResult().toString();
-                    updateProfile(uploadedImageUrl);
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                        while (!uriTask.isSuccessful()) ;
+                        String uploadedImageUrl = uriTask.getResult().toString();
+                        updateProfile(uploadedImageUrl);
+                    }
                 })
-                .addOnFailureListener(e -> {
-                    progressDialog.dismiss();
-                    Toast.makeText(EditProfileActivity.this, "Failed to upload image due to " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
+                        Toast.makeText(EditProfileActivity.this, "Failed to upload image due to " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 });
     }
 
@@ -173,23 +193,18 @@ public class EditProfileActivity extends AppCompatActivity {
 
         DocumentReference userRef = FirebaseFirestore.getInstance().collection("Users").document(firebaseAuth.getUid());
 
-        userRef.addSnapshotListener((documentSnapshot, error) -> {
-            if (error != null) {
-                return;
-            }
-
-            if (documentSnapshot != null && documentSnapshot.exists()) {
+        userRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 String email = documentSnapshot.getString("email");
                 String name = documentSnapshot.getString("name");
                 String profileImage = documentSnapshot.getString("profileImage");
-                String representedAs = documentSnapshot.getString("representBy");
+                representBy = documentSnapshot.getString("representBy");
                 String userName = documentSnapshot.getString("userName");
                 String bio = documentSnapshot.getString("bio");
                 myAccountType = documentSnapshot.getString("accountType");
 
-                if (myAccountType.equalsIgnoreCase("Email")) {
-                    binding.emailEt.setEnabled(false);
-                }
+                binding.emailEt.setEnabled(false);
 
                 binding.nameEt.setText(name);
                 binding.emailEt.setText(email);
@@ -198,7 +213,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
                 ArrayAdapter<String> adapter = (ArrayAdapter<String>) binding.representAsSpinner.getAdapter();
                 if (adapter != null) {
-                    int position = adapter.getPosition(representedAs);
+                    int position = adapter.getPosition(representBy);
                     binding.representAsSpinner.setSelection(position);
                 }
 
@@ -207,7 +222,7 @@ public class EditProfileActivity extends AppCompatActivity {
                             .load(profileImage)
                             .placeholder(R.drawable.profile_icon)
                             .into(binding.profileIv);
-                } catch (Exception e) {
+                } catch (Exception ignored) {
                 }
             }
         });

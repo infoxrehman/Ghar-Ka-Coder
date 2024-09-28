@@ -48,6 +48,8 @@ dependencies {
 
     implementation(libs.glide)
 
+    implementation(libs.android.pdf.viewer)
+
     implementation(libs.koloda.android)
 
     implementation(libs.sdp.android)

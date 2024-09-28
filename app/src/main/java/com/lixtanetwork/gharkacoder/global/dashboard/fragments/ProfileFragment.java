@@ -69,12 +69,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        binding.walletConnectBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-
         binding.getVerifiedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

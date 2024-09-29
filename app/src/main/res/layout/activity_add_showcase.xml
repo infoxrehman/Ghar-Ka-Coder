@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".explore.showcase.activities.AddShowcaseActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_54sdp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/arrow_icon"
+            android:padding="@dimen/_4sdp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/projectIconIv"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@color/white"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_icon"
+                app:shapeAppearance="@style/styleRoundCornersImage" />
+
+            <ImageView
+                android:id="@+id/profileImagePick"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_alignStart="@+id/projectIconIv"
+                android:layout_alignTop="@+id/projectIconIv"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_62sdp"
+                android:layout_marginTop="@dimen/_62sdp"
+                android:layout_marginEnd="@dimen/_92sdp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/profile_edit_icon" />
+
+            <EditText
+                android:id="@+id/projectTitleEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileImagePick"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_34sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/global_edittext"
+                android:fontFamily="@font/lato_medium"
+                android:hint="@string/product_title"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/projectTaglineEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/projectTitleEt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/global_edittext"
+                android:fontFamily="@font/lato_medium"
+                android:hint="@string/project_tagline"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/projectDescriptionEt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_below="@id/projectTaglineEt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/global_edittext"
+                android:fontFamily="@font/lato_medium"
+                android:maxLength="500"
+                android:gravity="start"
+                android:hint="@string/project_description"
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <Spinner
+                android:id="@+id/projectTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/projectDescriptionEt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/global_edittext"
+                android:padding="@dimen/_10sdp" />
+
+            <EditText
+                android:id="@+id/projectUrlEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/projectTypeSpinner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/global_edittext"
+                android:fontFamily="@font/lato_medium"
+                android:hint="@string/project_url"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <RelativeLayout
+                android:id="@+id/optionalBannersLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/projectUrlEt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp">
+
+                <TextView
+                    android:id="@+id/optionalBannerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Banners (optional)"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+                <ImageView
+                    android:id="@+id/optionalBannerAddIv"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:src="@drawable/add_icon"
+                    app:tint="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/images"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/optionalBannerLabel"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/row_images_picked" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/optionalBannersLayout"
+                android:layout_marginStart="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_28sdp"
+                android:layout_marginBottom="@dimen/_28sdp"
+                android:background="@drawable/primary_button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/lato_bold"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:backgroundTint="@null" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

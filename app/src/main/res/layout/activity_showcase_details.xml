@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".explore.showcase.activities.ShowcaseDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_54sdp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/arrow_icon"
+            android:padding="@dimen/_4sdp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/bannerImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bannerImageView"
+                android:layout_margin="@dimen/_14sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/projectCard"
+                    android:layout_width="@dimen/_72sdp"
+                    android:layout_height="@dimen/_72sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/projectImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/projectTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_toEndOf="@id/projectCard"
+                    android:fontFamily="@font/lato_semibold"
+                    android:text="@string/product_title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp" />
+
+                <TextView
+                    android:id="@+id/projectTagline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/projectTitle"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_toEndOf="@id/projectCard"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_medium"
+                    android:maxLines="2"
+                    android:text="@string/project_tagline"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/votesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/projectCard"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:background="@drawable/primary_button"
+                    android:padding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/upvote_icon"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/upvote_fill_icon" />
+
+                        <TextView
+                            android:id="@+id/upvote_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_toEndOf="@id/upvote_icon"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="Upvoted"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/submittedAndVotesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/votesLayout"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:background="@drawable/global_edittext"
+                    android:padding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/submmitedOnlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/_28sdp">
+
+                        <TextView
+                            android:id="@+id/submittedOn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/lato_medium"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/submittedOn"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:text="Submitted on"
+                            android:fontFamily="@font/lato_regular"
+                            android:textColor="@color/secondaryButtonTextColor"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_toStartOf="@id/upvotesLayout"
+                        android:layout_toEndOf="@id/submmitedOnlayout"
+                        android:background="@color/white"
+                        android:rotation="90" />
+
+                    <RelativeLayout
+                        android:id="@+id/upvotesLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_28sdp">
+
+                        <TextView
+                            android:id="@+id/votesTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text=""
+                            android:fontFamily="@font/lato_medium"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/votesTv"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/lato_regular"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:text="Upvoters"
+                            android:textColor="@color/secondaryButtonTextColor"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/meetCreatorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/submittedAndVotesLayout"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/meetCreatorLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Meet the creator of this project."
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:layout_below="@id/meetCreatorLabel"
+                        android:background="@drawable/global_button"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/creatorCard"
+                            android:layout_width="@dimen/_48sdp"
+                            android:layout_height="@dimen/_48sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            app:cardCornerRadius="@dimen/_6sdp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:id="@+id/creatorImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/creatorName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_toEndOf="@id/creatorCard"
+                            android:fontFamily="@font/lato_semibold"
+                            android:text="@string/creatorName"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/creatorBio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/creatorName"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_toEndOf="@id/creatorCard"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/lato_medium"
+                            android:maxLines="2"
+                            android:text="@string/creatorBio"
+                            android:textColor="@color/secondaryButtonTextColor"
+                            android:textSize="@dimen/_10ssp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/descriptionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/meetCreatorLayout"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/descriptionLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Description"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <TextView
+                        android:id="@+id/descriptionTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/descriptionLabel"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/lato_semibold"
+                        android:text=""
+                        android:textColor="@color/secondaryButtonTextColor"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/showCaseCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_138sdp"
+                    android:layout_below="@id/descriptionLayout"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_14sdp"
+                    app:cardCornerRadius="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_138sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/showcase_src" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

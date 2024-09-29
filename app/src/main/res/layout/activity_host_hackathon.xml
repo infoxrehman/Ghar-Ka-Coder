@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".explore.hackathon.activities.HostHackathonActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_54sdp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/arrow_icon"
+            android:padding="@dimen/_4sdp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/forLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/forStudentOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_medium"
+                    android:padding="@dimen/_8sdp"
+                    android:text="For Students"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+                <RadioButton
+                    android:id="@+id/forCommuntityOrCollegeOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_medium"
+                    android:padding="@dimen/_8sdp"
+                    android:text="For Communities/Companies"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/forStudentEntry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/forLayout"
+                android:visibility="gone"
+                android:layout_margin="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/forStudentBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_hackathon"
+                    app:shapeAppearance="@style/styleRoundCornersShowcaseImage" />
+
+                <EditText
+                    android:id="@+id/forStudentHackathonTitleEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_title"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/forStudentHackathonTaglineEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_tagline"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/forStudentHackathonDescriptionEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:gravity="start"
+                    android:hint="@string/hackathon_description"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/forStudentHackathonContributorEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_contributor"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <Spinner
+                    android:id="@+id/forStudentHackathonTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:padding="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/forStudentHackathonAddressEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:gravity="start"
+                    android:hint="@string/hackathon_address"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/forStudentHackathonFeeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:padding="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/forStudentHackathonFeeEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_fee"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/studentHackathonStartDateEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:drawableEnd="@drawable/date_ic"
+                    android:drawableTint="@color/white"
+                    android:focusable="false"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="Start Date"
+                    android:inputType="date"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/studentHackathonEndDateEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:drawableEnd="@drawable/date_ic"
+                    android:drawableTint="@color/white"
+                    android:focusable="false"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="End Date"
+                    android:inputType="date"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <Button
+                    android:id="@+id/forStudentSubmitBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_28sdp"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:layout_marginEnd="@dimen/_28sdp"
+                    android:layout_marginBottom="@dimen/_28sdp"
+                    android:background="@drawable/primary_button"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/forCollegeUniversityEntry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/forLayout"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/_12sdp"
+                android:visibility="gone">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/forCollegeUniversityBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_hackathon"
+                    app:shapeAppearance="@style/styleRoundCornersShowcaseImage" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonTitleEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_title"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonTaglineEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_tagline"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonDescriptionEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:gravity="start"
+                    android:hint="@string/hackathon_description"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonContributorEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_contributor"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <Spinner
+                    android:id="@+id/forCollegeUniversityHackathonTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/forCollegeUniversityHackathonContributorEt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:padding="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonAddressEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:gravity="start"
+                    android:hint="@string/hackathon_address"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/forCollegeUniversityHackathonFeeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/forCollegeUniversityHackathonAddressEt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:padding="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonFeeEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="@string/hackathon_fee"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonStartDateEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:drawableEnd="@drawable/date_ic"
+                    android:drawableTint="@color/white"
+                    android:focusable="false"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="Start Date"
+                    android:inputType="date"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <EditText
+                    android:id="@+id/forCollegeUniversityHackathonEndDateEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/global_edittext"
+                    android:drawableEnd="@drawable/date_ic"
+                    android:drawableTint="@color/white"
+                    android:focusable="false"
+                    android:fontFamily="@font/lato_medium"
+                    android:hint="End Date"
+                    android:inputType="date"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <Button
+                    android:id="@+id/forCollegeUniversitySubmitBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_28sdp"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:layout_marginEnd="@dimen/_28sdp"
+                    android:layout_marginBottom="@dimen/_28sdp"
+                    android:background="@drawable/primary_button"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

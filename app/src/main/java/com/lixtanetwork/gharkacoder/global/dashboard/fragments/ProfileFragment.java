@@ -20,10 +20,12 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.lixtanetwork.gharkacoder.databinding.CodrAirdropTokenDropDailogBinding;
 import com.lixtanetwork.gharkacoder.global.loginandregister.activities.LoginActivity;
+import com.lixtanetwork.gharkacoder.profile.activities.CodrWalletActivity;
 import com.lixtanetwork.gharkacoder.profile.activities.EditProfileActivity;
 import com.lixtanetwork.gharkacoder.R;
 import com.lixtanetwork.gharkacoder.databinding.FragmentProfileBinding;
@@ -62,6 +64,8 @@ public class ProfileFragment extends Fragment {
 
         loadUserInfo();
 
+        checkForPoints(firebaseAuth.getCurrentUser().getUid());
+
         binding.editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,17 +73,17 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        binding.walletConnectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, CodrWalletActivity.class));
+            }
+        });
+
         binding.getVerifiedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "Oops! My friend seem that you account age is too early. Engagement more to get verified and earn badges.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        binding.privacyPolicyBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goLink();
             }
         });
 
@@ -148,9 +152,17 @@ public class ProfileFragment extends Fragment {
                 });
     }
 
-    private void goLink() {
-        Uri uri = Uri.parse("https://gharkacoder.netlify.app/privacypolicy");
-        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+    private void checkForPoints(String uid) {
+
+        DocumentReference userDocRef = firebaseFirestore.collection("Users").document(uid);
+
+        userDocRef.get().addOnSuccessListener(documentSnapshot -> {
+            if (documentSnapshot.exists()) {
+                Long currentPoints = documentSnapshot.getLong("points");
+
+                binding.codrPointTv.setText(currentPoints + " $CODR Points");
+            }
+        });
     }
 
 }

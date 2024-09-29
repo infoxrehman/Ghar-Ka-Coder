@@ -198,6 +198,73 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/global_button">
+
+            <TextView
+                android:id="@+id/gacaiLabel"
+                android:layout_width="@dimen/_138sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:fontFamily="@font/lato_semibold"
+                android:text="GAC AI Chat"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp" />
+
+            <TextView
+                android:id="@+id/gacaiDescription"
+                android:layout_width="@dimen/_138sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gacaiLabel"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:fontFamily="@font/lato_medium"
+                android:text="Imagine having answer to any tech realted question, now you can!"
+                android:textColor="@color/secondaryButtonTextColor"
+                android:textSize="@dimen/_12ssp" />
+
+            <Button
+                android:id="@+id/gacaiGetStartedBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_below="@id/gacaiDescription"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:layout_toStartOf="@id/aiImage"
+                android:background="@drawable/profile_button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/lato_bold"
+                android:text="Get started"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                app:backgroundTint="@null" />
+
+            <ImageView
+                android:id="@+id/aiImage"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_toEndOf="@id/gacaiLabel"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gac_logo2" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginEnd="-30dp"
@@ -251,8 +318,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_188sdp"
             android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_14sdp"
             android:background="@drawable/explore_hackathon_list_background"
             android:elevation="@dimen/_2sdp">

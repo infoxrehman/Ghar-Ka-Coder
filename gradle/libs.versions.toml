@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.2"
+generativeai = "0.9.0"
 androidGifDrawable = "1.2.19"
 androidPdfViewer = "2.8.2"
 glide = "4.16.0"
@@ -26,6 +27,7 @@ googleFirebaseFirebasePerf = "1.4.2"
 firebaseMessaging = "24.0.1"
 
 [libraries]
+generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 android-gif-drawable = { module = "pl.droidsonroids.gif:android-gif-drawable", version.ref = "androidGifDrawable" }
 android-pdf-viewer = { module = "com.github.barteksc:android-pdf-viewer", version.ref = "androidPdfViewer" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }

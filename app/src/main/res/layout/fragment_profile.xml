@@ -62,39 +62,39 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/verifiedLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/profileIv"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/_58sdp"
-                android:layout_marginBottom="@dimen/_2sdp"
-                android:background="@drawable/verified_background"
-                android:padding="@dimen/_6sdp">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/verifiedLayout"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignBottom="@+id/profileIv"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_marginEnd="@dimen/_58sdp"-->
+<!--                android:layout_marginBottom="@dimen/_2sdp"-->
+<!--                android:background="@drawable/verified_background"-->
+<!--                android:padding="@dimen/_6sdp">-->
 
-                <TextView
-                    android:id="@+id/verifiedTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/_4sdp"
-                    android:fontFamily="@font/arcade_gamer"
-                    android:text="@string/verified"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_6ssp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/verifiedTv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginStart="@dimen/_4sdp"-->
+<!--                    android:fontFamily="@font/arcade_gamer"-->
+<!--                    android:text="@string/verified"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/_6ssp" />-->
 
-                <ImageView
-                    android:id="@+id/verifiedIv"
-                    android:layout_width="@dimen/_18sdp"
-                    android:layout_height="@dimen/_18sdp"
-                    android:layout_marginStart="@dimen/_4sdp"
-                    android:layout_toEndOf="@id/verifiedTv"
-                    android:scaleType="center"
-                    android:src="@drawable/profile_verified_icon"
-                    app:tint="@color/primaryColor" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/verifiedIv"-->
+<!--                    android:layout_width="@dimen/_18sdp"-->
+<!--                    android:layout_height="@dimen/_18sdp"-->
+<!--                    android:layout_marginStart="@dimen/_4sdp"-->
+<!--                    android:layout_toEndOf="@id/verifiedTv"-->
+<!--                    android:scaleType="center"-->
+<!--                    android:src="@drawable/profile_verified_icon"-->
+<!--                    app:tint="@color/primaryColor" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
             <TextView
                 android:id="@+id/usernameTv"
@@ -139,6 +139,21 @@
                     android:textAlignment="center"
                     android:textColor="#80FFFFFF"
                     android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:id="@+id/codrPointTv"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/walletIdTv"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:fontFamily="@font/neue_machina_ultrabold"
+                    android:text="0 $CODR Points"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
 
                 <!--                <ImageView-->
                 <!--                    android:id="@+id/copyBtn"-->
@@ -237,33 +252,6 @@
                     android:textSize="@dimen/_12ssp"
                     app:drawableEndCompat="@drawable/profile_next_icon"
                     app:drawableStartCompat="@drawable/profile_verified_icon"
-                    app:drawableTint="@color/white" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/privacyPolicyBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:layout_marginBottom="@dimen/_2sdp"
-                android:background="@drawable/profile_button"
-                android:backgroundTint="@color/primaryColor"
-                android:padding="@dimen/_12sdp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="@dimen/_18sdp"
-                    android:fontFamily="@font/lato_bold"
-                    android:gravity="center_vertical"
-                    android:text="@string/privacy_policy"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_12ssp"
-                    app:drawableEndCompat="@drawable/profile_next_icon"
-                    app:drawableStartCompat="@drawable/profile_privacy_policy_icon"
                     app:drawableTint="@color/white" />
 
             </RelativeLayout>

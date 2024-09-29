@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:padding="@dimen/_8sdp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/gemini_ai_logo"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:src="@drawable/gemini_ai_logo"
+        android:padding="@dimen/_2sdp"
+        app:shapeAppearance="@style/styleCircleImage" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/message"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@id/gemini_ai_logo"
+        android:fontFamily="@font/product_sans_bold"
+        android:gravity="start|center"
+        android:paddingStart="@dimen/_12sdp"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp" />
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gemini_ai_logo"
+        android:background="@null"
+        android:cursorVisible="false"
+        android:focusableInTouchMode="false"
+        android:longClickable="true"
+        android:editable="false"
+        android:textIsSelectable="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_toEndOf="@id/gemini_ai_logo"
+        android:fontFamily="@font/product_sans_regular"
+        android:paddingStart="@dimen/_12sdp"
+        android:text="Message"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp" />
+
+</RelativeLayout>

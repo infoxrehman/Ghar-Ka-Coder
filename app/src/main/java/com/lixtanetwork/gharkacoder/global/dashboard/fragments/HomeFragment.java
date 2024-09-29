@@ -32,6 +32,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.lixtanetwork.gharkacoder.databinding.DailyCodingChallengeQuestionDialogBinding;
 import com.lixtanetwork.gharkacoder.explore.hackathon.activities.HackathonActivity;
 import com.lixtanetwork.gharkacoder.explore.showcase.activities.ShowcaseActivity;
+import com.lixtanetwork.gharkacoder.geminiai.AskGeminiAiActivity;
 import com.lixtanetwork.gharkacoder.global.dashboard.adapters.AdapterFeaturedGuideline;
 import com.lixtanetwork.gharkacoder.R;
 import com.lixtanetwork.gharkacoder.databinding.FragmentHomeBinding;
@@ -87,6 +88,8 @@ public class HomeFragment extends Fragment {
 
         loadTopProjectShowcase();
 
+        showDailyQuestionDialog();
+
         checkForPoints(firebaseUser.getUid());
 
         binding.dailyCodingChallengeLayout.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +110,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(mContext, HackathonActivity.class));
+            }
+        });
+
+        binding.gacaiGetStartedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, AskGeminiAiActivity.class));
             }
         });
 

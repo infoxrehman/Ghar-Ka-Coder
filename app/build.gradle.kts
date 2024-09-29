@@ -46,6 +46,8 @@ dependencies {
 
     implementation(libs.lottie)
 
+    implementation(libs.generativeai)
+
     implementation(libs.glide)
 
     implementation(libs.android.pdf.viewer)

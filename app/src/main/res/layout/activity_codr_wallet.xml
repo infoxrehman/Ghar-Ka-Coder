@@ -8,18 +8,43 @@
     android:background="@color/background"
     tools:context=".profile.activities.CodrWalletActivity">
 
-    <Button
-        android:id="@+id/connectWalletButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Connect Wallet" />
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_54sdp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/arrow_icon"
+            android:padding="@dimen/_4sdp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:src="@drawable/gac_logo2"
+        android:id="@+id/character"
+        android:layout_centerInParent="true"/>
 
     <TextView
-        android:id="@+id/walletIdTextView"
+        android:id="@+id/codrTokenTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/connectWalletButton"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/character"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:layout_marginEnd="@dimen/_28sdp"
+        android:fontFamily="@font/arcade_gamer"
+        android:layout_marginTop="@dimen/_28sdp"
+        android:text="$CODR wallet coming soon"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp" />
 
 </RelativeLayout>

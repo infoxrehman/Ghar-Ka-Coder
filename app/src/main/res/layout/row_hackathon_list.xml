@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@drawable/global_button">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hackathonCard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_182sdp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardElevation="0dp">
+
+        <ImageView
+            android:id="@+id/hackathonImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/hackathonTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hackathonCard"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:fontFamily="@font/lato_semibold"
+        android:maxLines="2"
+        android:text="@string/hackathon_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:id="@+id/hackathonDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hackathonTitle"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/lato_medium"
+        android:maxLines="2"
+        android:text="@string/hackathon_description"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/hackathonContributorLogo"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_below="@id/hackathonDescription"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_icon"
+        app:shapeAppearance="@style/styleCircleImage" />
+
+    <TextView
+        android:id="@+id/hackathonContributorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hackathonDescription"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_toEndOf="@id/hackathonContributorLogo"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="start"
+        android:maxLines="2"
+        android:text="@string/hackathon_description"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp" />
+
+    <TextView
+        android:id="@+id/hackathonUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hackathonContributorLogo"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/hackathon_url"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp" />
+
+</RelativeLayout>

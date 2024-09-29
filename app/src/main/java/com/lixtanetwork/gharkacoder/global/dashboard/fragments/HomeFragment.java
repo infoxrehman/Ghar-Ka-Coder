@@ -1,5 +1,6 @@
 package com.lixtanetwork.gharkacoder.global.dashboard.fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,12 +29,14 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.lixtanetwork.gharkacoder.databinding.DailyCodingChallengeQuestionDialogBinding;
 import com.lixtanetwork.gharkacoder.explore.hackathon.activities.HackathonActivity;
 import com.lixtanetwork.gharkacoder.explore.showcase.activities.ShowcaseActivity;
 import com.lixtanetwork.gharkacoder.global.dashboard.adapters.AdapterFeaturedGuideline;
 import com.lixtanetwork.gharkacoder.R;
 import com.lixtanetwork.gharkacoder.databinding.FragmentHomeBinding;
 import com.lixtanetwork.gharkacoder.explore.guidelines.models.ModelGuidelinePdf;
+import com.lixtanetwork.gharkacoder.global.dashboard.models.DailyCodingChallengeModel;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -51,6 +56,7 @@ public class HomeFragment extends Fragment {
     private FirebaseUser firebaseUser;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseMessaging firebaseMessaging;
+    private int currentQuestionIndex = 0;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -82,6 +88,13 @@ public class HomeFragment extends Fragment {
         loadTopProjectShowcase();
 
         checkForPoints(firebaseUser.getUid());
+
+        binding.dailyCodingChallengeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDailyQuestionDialog();
+            }
+        });
 
         binding.listYourProjectsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,6 +175,155 @@ public class HomeFragment extends Fragment {
                         binding.guidelineRv.setAdapter(adapter);
                     }
                 });
+    }
+
+    public void showDailyQuestionDialog() {
+
+        firebaseFirestore.collection("Daily Coding Challenge Questions").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                List<DocumentSnapshot> dslist = queryDocumentSnapshots.getDocuments();
+                if (!dslist.isEmpty()) {
+                    int dayOfYear = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+                    currentQuestionIndex = dayOfYear % dslist.size();
+                    DailyCodingChallengeModel dailyQuestionsModel = dslist.get(currentQuestionIndex).toObject(DailyCodingChallengeModel.class);
+
+                    binding.dailyCodingChallengeTv.setText(dailyQuestionsModel.getQuestion());
+
+                    binding.dailyCodingChallengeTv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            showQuestionInDialog(dailyQuestionsModel);
+                        }
+                    });
+
+                } else {
+                    binding.dailyCodingChallengeTv.setText("No question found");
+                }
+            }
+        });
+
+    }
+
+    private void showQuestionInDialog(DailyCodingChallengeModel dailyCodingChallengeModel) {
+
+        String uid = firebaseUser.getUid();
+        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+        DocumentReference responseRef = firebaseFirestore.collection("Daily Coding Challenge Responses").document(date).collection("responses").document(uid);
+
+        responseRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult() != null && task.getResult().exists()) {
+                Toast.makeText(mContext, "Already you have submitted your today's response! Come back tomorrow", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            DailyCodingChallengeQuestionDialogBinding dailyCodingChallengeQuestionDialogBinding = DailyCodingChallengeQuestionDialogBinding.inflate(LayoutInflater.from(mContext));
+            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder.setView(dailyCodingChallengeQuestionDialogBinding.getRoot());
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            alertDialog.setCanceledOnTouchOutside(false);
+
+            dailyCodingChallengeQuestionDialogBinding.questionTitle.setText(dailyCodingChallengeModel.getQuestion());
+            dailyCodingChallengeQuestionDialogBinding.option1.setText(dailyCodingChallengeModel.getChoice1());
+            dailyCodingChallengeQuestionDialogBinding.option2.setText(dailyCodingChallengeModel.getChoice2());
+            dailyCodingChallengeQuestionDialogBinding.option3.setText(dailyCodingChallengeModel.getChoice3());
+            dailyCodingChallengeQuestionDialogBinding.option4.setText(dailyCodingChallengeModel.getChoice4());
+
+            dailyCodingChallengeQuestionDialogBinding.submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String answer = getSelectedAnswer(dailyCodingChallengeQuestionDialogBinding, dailyCodingChallengeModel);
+                    if (answer != null && answer.equals(dailyCodingChallengeModel.getCorrectOne())) {
+                        saveUserResponseToFirestore(dailyCodingChallengeModel, answer);
+                        Toast.makeText(mContext, "Woo! Correct, you are quiet intelligent doh!", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    } else if (answer != null) {
+                        saveUserResponseToFirestore(dailyCodingChallengeModel, answer);
+                        Toast.makeText(mContext, "Ohh ohh! You went wrong this time!", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    } else {
+                        Toast.makeText(mContext, "Answer to select karle mere jaan", Toast.LENGTH_SHORT).show();
+                    }
+                    alertDialog.dismiss();
+                }
+            });
+        });
+    }
+
+    private String getSelectedAnswer(DailyCodingChallengeQuestionDialogBinding dailyCodingChallengeQuestionDialogBinding, DailyCodingChallengeModel dailyCodingChallengeModel) {
+
+        RadioButton radioButton = dailyCodingChallengeQuestionDialogBinding.getRoot().findViewById(dailyCodingChallengeQuestionDialogBinding.optionGroup.getCheckedRadioButtonId());
+        if (radioButton != null) {
+            return radioButton.getText().toString();
+        } else {
+            return null;
+        }
+    }
+
+    private void saveUserResponseToFirestore(DailyCodingChallengeModel dailyCodingChallengeModel, String answer) {
+        if (firebaseUser != null) {
+            String uid = firebaseUser.getUid();
+            String name = firebaseUser.getDisplayName();
+            String email = firebaseUser.getEmail();
+
+            String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+            DocumentReference docRef = firebaseFirestore.collection("Daily Coding Challenge Responses").document(date).collection("responses").document(uid);
+
+            Map<String, Object> responseMap = new HashMap<>();
+            responseMap.put("uid", uid);
+            responseMap.put("name", name);
+            responseMap.put("email", email);
+            responseMap.put("question", dailyCodingChallengeModel.getQuestion());
+            responseMap.put("correctAnswer", dailyCodingChallengeModel.getCorrectOne());
+            responseMap.put("answer", answer);
+
+            boolean isCorrect = answer.equals(dailyCodingChallengeModel.getCorrectOne());
+
+            docRef.set(responseMap).addOnSuccessListener(aVoid -> {
+                Toast.makeText(mContext, "Response saved", Toast.LENGTH_SHORT).show();
+                if (isCorrect) {
+                    updateUserPoints(uid, true);
+                } else {
+                    updateUserPoints(uid, false);
+                }
+            }).addOnFailureListener(e -> {
+                Toast.makeText(mContext, "Failed to save response", Toast.LENGTH_SHORT).show();
+            });
+        }
+    }
+
+    private void updateUserPoints(String uid, boolean isCorrect) {
+
+        DocumentReference userDocRef = firebaseFirestore.collection("Users").document(uid);
+
+        userDocRef.get().addOnSuccessListener(documentSnapshot -> {
+            if (documentSnapshot.exists()) {
+                Long currentPoints = documentSnapshot.getLong("points");
+
+                if (currentPoints == null) {
+                    currentPoints = 0L;
+                }
+                if (isCorrect) {
+                    currentPoints += 2;
+                } else {
+                    currentPoints = 0L;
+                }
+
+                HashMap<String, Object> userDetails = new HashMap<>();
+                userDetails.put("points", currentPoints);
+
+                userDocRef.update(userDetails)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+
+                            }
+                        });
+            }
+        });
     }
 
     private void checkForPoints(String uid) {

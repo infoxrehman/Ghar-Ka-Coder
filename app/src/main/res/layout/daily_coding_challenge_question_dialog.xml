@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/_12sdp">
+
+    <TextView
+        android:id="@+id/dailyTextTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:background="@drawable/home_daily_coding_challenge_upper_background"
+        android:fontFamily="@font/source_code_pro_bold"
+        android:padding="@dimen/_10sdp"
+        android:text="dailycoding@challenge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dailyTextTv"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:background="@drawable/home_daily_coding_challenge_background"
+        android:padding="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/questionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="@font/lato_semibold"
+            android:padding="@dimen/_12sdp"
+            android:text="Who was the father of C Programming...."
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+
+        <RadioGroup
+            android:id="@+id/optionGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionTitle"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/option4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_medium"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/optionGroup"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/primary_button"
+            android:fontFamily="@font/lato_bold"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:backgroundTint="@null" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

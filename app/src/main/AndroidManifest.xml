@@ -18,7 +18,9 @@
         android:theme="@style/Theme.GharKaCoder"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".profile.activities.CodrWalletActivity"
+            android:exported="false" />
         <activity
             android:name=".AddYourFeedActivity"
             android:exported="false"
@@ -41,10 +43,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".explore.hackathon.activities.HackathonActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".geminiai.AskGeminiAiActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -94,7 +92,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

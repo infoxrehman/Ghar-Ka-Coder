@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.lixtanetwork.gharkacoder.R;
 import com.lixtanetwork.gharkacoder.databinding.FragmentExploreBinding;
+import com.lixtanetwork.gharkacoder.explore.community.activities.CommunityActivity;
 import com.lixtanetwork.gharkacoder.explore.guidelines.activities.GuidelinesActivity;
 import com.lixtanetwork.gharkacoder.explore.hackathon.activities.HackathonActivity;
 import com.lixtanetwork.gharkacoder.explore.showcase.activities.ShowcaseActivity;
@@ -57,7 +58,7 @@ public class ExploreFragment extends Fragment {
         binding.communityTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Woo! we are still working on this feature buddy...", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(mContext, CommunityActivity.class));
             }
         });
 
@@ -67,7 +68,6 @@ public class ExploreFragment extends Fragment {
                 startActivity(new Intent(mContext, ShowcaseActivity.class));
             }
         });
-
 
         binding.hackathonTab.setOnClickListener(new View.OnClickListener() {
             @Override

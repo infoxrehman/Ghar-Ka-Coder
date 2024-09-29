@@ -250,8 +250,10 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_188sdp"
-            android:layout_margin="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
             android:background="@drawable/explore_hackathon_list_background"
             android:elevation="@dimen/_2sdp">
 

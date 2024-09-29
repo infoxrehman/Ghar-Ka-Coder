@@ -3,6 +3,7 @@ package com.lixtanetwork.gharkacoder.explore.community.activities;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,7 +27,28 @@ public class CommunityActivity extends AppCompatActivity {
             public void onClick(View view) {
                 onBackPressed();
             }
+
+        });
+
+        binding.communityChatsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(CommunityActivity.this, "Sorry to say, this feature is in development. Come back soon !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.communityExploreCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(CommunityActivity.this, "Sorry to say, this feature is in development. Come back soon !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.communityProjectsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(CommunityActivity.this, "Sorry to say, this feature is in development. Come back soon !", Toast.LENGTH_SHORT).show();
+            }
         });
     }
-
 }

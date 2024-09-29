@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".global.ComingSoonFragment">
+
+    <RelativeLayout
+        android:id="@+id/Rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/global_edittext"
+        android:layout_margin="@dimen/_8sdp"
+        android:padding="@dimen/_12sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:id="@+id/text1"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:fontFamily="@font/lato_bold"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="Good to see you here, buddy"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_26ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/lato_semibold"
+            android:textAlignment="center"
+            android:text="Sorry to say, this feature is in development. Come back soon !"
+            android:textColor="@color/secondaryButtonTextColor"
+            android:textSize="@dimen/_14ssp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/coming_soon" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

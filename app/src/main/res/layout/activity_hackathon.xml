@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/background"
     tools:context=".explore.hackathon.activities.HackathonActivity">
 
@@ -26,48 +27,53 @@
 
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/searchEt"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:background="@drawable/guideline_background"
-        android:drawableStart="@drawable/search_icon"
-        android:drawablePadding="@dimen/_10sdp"
-        android:fontFamily="@font/lato_medium"
-        android:hint="Search"
-        android:padding="@dimen/_14sdp"
-        android:textColorHint="@color/white" />
+        android:layout_height="match_parent"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/showcaseProjectsRv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/searchEt"
-        android:layout_margin="@dimen/_10sdp"
-        android:scrollbars="none"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/row_hackathon_list" />
+<!--    <EditText-->
+<!--        android:id="@+id/searchEt"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/toolbar"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="@dimen/_12sdp"-->
+<!--        android:layout_marginTop="@dimen/_8sdp"-->
+<!--        android:layout_marginEnd="@dimen/_12sdp"-->
+<!--        android:background="@drawable/guideline_background"-->
+<!--        android:drawableStart="@drawable/search_icon"-->
+<!--        android:drawablePadding="@dimen/_10sdp"-->
+<!--        android:fontFamily="@font/lato_medium"-->
+<!--        android:hint="Search"-->
+<!--        android:padding="@dimen/_14sdp"-->
+<!--        android:textColorHint="@color/white" />-->
 
-    <Button
-        android:id="@+id/hostHackathonBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/_18sdp"
-        android:background="@drawable/primary_button"
-        android:backgroundTint="@null"
-        android:fontFamily="@font/lato_bold"
-        android:text="Host a hackathon"
-        android:textAllCaps="false"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:textSize="@dimen/_14ssp"
-        app:backgroundTint="@null" />
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/showcaseProjectsRv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@+id/searchEt"-->
+<!--        android:layout_margin="@dimen/_10sdp"-->
+<!--        android:scrollbars="none"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        tools:listitem="@layout/row_hackathon_list" />-->
 
-</RelativeLayout>
+<!--    <Button-->
+<!--        android:id="@+id/hostHackathonBtn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_margin="@dimen/_18sdp"-->
+<!--        android:background="@drawable/primary_button"-->
+<!--        android:backgroundTint="@null"-->
+<!--        android:fontFamily="@font/lato_bold"-->
+<!--        android:text="Host a hackathon"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="@dimen/_14ssp"-->
+<!--        app:backgroundTint="@null" />-->
+
+</LinearLayout>

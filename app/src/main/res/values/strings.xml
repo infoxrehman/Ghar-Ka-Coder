@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Ghar Ka Coder</string>
-    <string name="powered_with">Powered with</string>
-    <string name="companyLabel">A Lixta Network Product ©</string>
+    <string name="teamLabel">Built by Team LixtaNetwork</string>
     <string name="version_code">Version code 1.0</string>
     <string name="default_web_client_id" translatable="false">123.apps.googleusercontent.com</string>
     <string name="forgetPassword">Forget Password?</string>
@@ -24,7 +23,6 @@
     <string name="guidelines">Guidelines</string>
     <string name="community">Community</string>
     <string name="hackathon">Hackathon</string>
-    <string name="internship">Internship</string>
     <string name="showcase">Showcase</string>
 
     <!-- Community -->
@@ -56,8 +54,10 @@
     <string name="askGeminiAI">Tap Gemini AI to start chatting…</string>
     <string name="enterBio">Enter your bio\n</string>
 
+    <string name="feed_content">Feed content</string>
+
     <string name="hackathon_title">Hackathon title</string>
-    <string name="hackathon_tagline">Project tagline</string>
+    <string name="hackathon_tagline">Hackathon tagline</string>
     <string name="hackathon_description">Hackathon description</string>
     <string name="hackathon_url">Hackathon url</string>
     <string name="hackathon_contributor">Hackathon contributor</string>
@@ -71,6 +71,7 @@
 
     <string name="creatorName">Creator name</string>
     <string name="creatorBio">Creator bio</string>
+
     <string name="daily_coding_challenge">Daily Coding Challenge</string>
 
 </resources>

@@ -57,6 +57,7 @@ dependencies {
 
     implementation(libs.constraintlayout)
     implementation(libs.activity)
+
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)

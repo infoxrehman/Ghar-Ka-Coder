@@ -308,7 +308,7 @@
                 android:textSize="@dimen/_10ssp" />
 
             <TextView
-                android:id="@+id/companyLabel"
+                android:id="@+id/teamLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_4sdp"
@@ -316,7 +316,7 @@
                 android:drawablePadding="@dimen/_18sdp"
                 android:fontFamily="@font/lato_bold"
                 android:gravity="center"
-                android:text="@string/companyLabel"
+                android:text="@string/teamLabel"
                 android:textColor="@color/secondaryButtonTextColor"
                 android:textSize="@dimen/_12ssp" />
 

@@ -9,14 +9,21 @@
     tools:context=".global.dashboard.fragments.FeedFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/community_explore_card"
+        android:id="@+id/add_your_feed_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_68sdp"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_12sdp"
-        app:cardBackgroundColor="@color/primaryColor"
+        app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="@dimen/_8sdp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/community_explore_background" />
 
         <TextView
             android:layout_width="wrap_content"

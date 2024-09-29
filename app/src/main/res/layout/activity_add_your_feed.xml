@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".AddYourFeedActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_54sdp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/arrow_icon"
+            android:padding="@dimen/_4sdp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/select_feed_card"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/select_feed_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.4"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/community_explore_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Select Image"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_18ssp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/feed_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/global_edittext"
+                android:fontFamily="@font/lato_medium"
+                android:gravity="start"
+                android:hint="@string/feed_content"
+                android:inputType="textMultiLine"
+                android:maxLength="500"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+<!--            <androidx.appcompat.widget.SwitchCompat-->
+<!--                android:id="@+id/pollHere"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/_12sdp"-->
+<!--                android:layout_marginTop="@dimen/_14sdp"-->
+<!--                android:layout_marginEnd="@dimen/_12sdp"-->
+<!--                android:fontFamily="@font/lato_medium"-->
+<!--                android:padding="@dimen/_12sdp"-->
+<!--                android:text="Create Poll"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="@dimen/_12ssp"-->
+<!--                app:thumbTint="@color/white"-->
+<!--                app:trackTint="@color/disabledText" />-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/pollDetailsLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/_12sdp"-->
+<!--                android:layout_marginTop="@dimen/_14sdp"-->
+<!--                android:layout_marginEnd="@dimen/_12sdp"-->
+<!--                android:background="@drawable/global_button"-->
+<!--                android:orientation="vertical"-->
+<!--                android:visibility="gone">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/poll_question"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/_8sdp"-->
+<!--                    android:layout_marginTop="@dimen/_8sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_8sdp"-->
+<!--                    android:background="@drawable/global_edittext"-->
+<!--                    android:hint="Poll Question"-->
+<!--                    android:padding="@dimen/_12sdp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textColorHint="@color/white"-->
+<!--                    android:textSize="@dimen/_12ssp" />-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/poll_option1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/_8sdp"-->
+<!--                    android:layout_marginTop="@dimen/_8sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_8sdp"-->
+<!--                    android:background="@drawable/global_edittext"-->
+<!--                    android:hint="Option 1"-->
+<!--                    android:padding="@dimen/_12sdp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textColorHint="@color/white"-->
+<!--                    android:textSize="@dimen/_12ssp" />-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/poll_option2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="@dimen/_8sdp"-->
+<!--                    android:background="@drawable/global_edittext"-->
+<!--                    android:hint="Option 2"-->
+<!--                    android:padding="@dimen/_12sdp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textColorHint="@color/white"-->
+<!--                    android:textSize="@dimen/_12ssp" />-->
+
+<!--            </LinearLayout>-->
+
+            <Button
+                android:id="@+id/feed_upload_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_28sdp"
+                android:layout_marginBottom="@dimen/_28sdp"
+                android:background="@drawable/primary_button"
+                android:backgroundTint="@null"
+                android:fontFamily="@font/lato_bold"
+                android:text="Let's go 🔥"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

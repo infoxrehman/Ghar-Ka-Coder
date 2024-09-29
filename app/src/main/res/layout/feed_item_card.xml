@@ -38,25 +38,25 @@
             android:textColor="@color/disabledText"
             android:textSize="@dimen/_14ssp" />
 
-        <ImageView
-            android:id="@+id/verifiedIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/fullNameTv"
-            android:layout_alignBottom="@+id/fullNameTv"
-            android:layout_marginStart="@dimen/_4sdp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_toEndOf="@id/fullNameTv"
-            android:scaleType="center"
-            android:src="@drawable/profile_verified_icon"
-            app:tint="@color/primaryColor" />
+<!--        <ImageView-->
+<!--            android:id="@+id/verifiedIv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@+id/fullNameTv"-->
+<!--            android:layout_alignBottom="@+id/fullNameTv"-->
+<!--            android:layout_marginStart="@dimen/_4sdp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:layout_marginBottom="0dp"-->
+<!--            android:layout_toEndOf="@id/fullNameTv"-->
+<!--            android:scaleType="center"-->
+<!--            android:src="@drawable/profile_verified_icon"-->
+<!--            app:tint="@color/primaryColor" />-->
 
         <TextView
             android:id="@+id/userNameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/verifiedIv"
+            android:layout_below="@id/fullNameTv"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:layout_marginEnd="@dimen/_12sdp"
@@ -103,6 +103,7 @@
             app:cardCornerRadius="@dimen/_8sdp">
 
             <ImageView
+                android:id="@+id/feedImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -117,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
+        android:visibility="gone"
         android:padding="16dp">
 
         <TextView
